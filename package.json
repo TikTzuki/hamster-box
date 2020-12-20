@@ -2,7 +2,7 @@
   "name": "hamster-box",
   "version": "0.1.0",
   "private": true,
-  "home": "http://TikTzuki.github.io/hamster-box",
+  "home": "https://tiktzuki.github.io/hamster-box",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -19,7 +19,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
