@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Factory Profile Modify]" guice-stage="DEVELOPMENT" verbose="10">
+  <parameter name="node" value="http://192.168.56.1:26611"/>
+  <parameter name="os" value="windows"/>
+  <parameter name="url" value="http://localhost:4200/"/>
+  <test thread-count="5" name="Test on FireFox(failed)" verbose="10">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="tiktzuki.selenium_grid.testcases.delete_user.TestDeleteUser">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="setup"/>
+          <include name="deleteUser"/>
+        </methods>
+      </class> <!-- tiktzuki.selenium_grid.testcases.delete_user.TestDeleteUser -->
+    </classes>
+  </test> <!-- Test on FireFox(failed) -->
+  <test thread-count="5" name="Test on Chrome(failed)" verbose="10">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="tiktzuki.selenium_grid.testcases.delete_user.TestDeleteUser">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="setup"/>
+          <include name="deleteUser"/>
+        </methods>
+      </class> <!-- tiktzuki.selenium_grid.testcases.delete_user.TestDeleteUser -->
+    </classes>
+  </test> <!-- Test on Chrome(failed) -->
+</suite> <!-- Failed suite [Factory Profile Modify] -->
