@@ -1,4 +1,4 @@
-package tiktzuki.selenium_grid.testcases.delete_user;
+package tiktzuki.selenium_grid.testcases.RegisterUser;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
@@ -6,22 +6,23 @@ import org.testng.annotations.Factory;
 import tiktzuki.selenium_grid.utils.Constant;
 import tiktzuki.selenium_grid.utils.ExcelUtils;
 
-public class FactoryDeleteUser {
+public class FactoryRegister {
 	
-	@Factory(dataProvider = "dataDeleteUser")
-	public Object[] createInstances() {
-		return new Object[] {new TestDeleteUser()};
+	@Factory(dataProvider="registerUser")
+	public Object[] createInstances(String userName, String PassWord, String ConfirmPassWord, String Email, String PhoneNUmber,String bl1, String bl2, String bl3) {
+		System.out.println(userName + PassWord+ ConfirmPassWord+ Email);
+		return new Object[] {new RegisterUser(userName, PassWord, ConfirmPassWord, Email, PhoneNUmber,bl1, bl2, bl3)};
 	}
 	
-	@DataProvider(name = "dataDeleteUser")
+	@DataProvider(name = "registerUser")
 	public Object[][] dataMethod(){
-		Object[][] arrayObjects = {{}};
+		Object[][] arrayObjects = getExcelData();
 		return arrayObjects;
 	}
 	
 	public String[][] getExcelData(){
 		// Setup data for test
-		ExcelUtils excelUtil = new ExcelUtils(Constant.Path_TestData+Constant.File_TestData_DELETE_USER, "Sheet1");
+		ExcelUtils excelUtil = new ExcelUtils(Constant.Path_TestData+Constant.File_Register, "Sheet1");
 		String[][] excelData = null;
 		int totalRows = excelUtil.getRowCount();
 		int totalCols = excelUtil.getColCont();

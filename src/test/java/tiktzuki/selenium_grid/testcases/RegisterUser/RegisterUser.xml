@@ -8,14 +8,14 @@
   <test name="Test on FireFox" group-by-instances="true">
         <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="tiktzuki.selenium_grid.testcases.profile_modify.FactoryProfileModify"></class>
+      <class name="tiktzuki.selenium_grid.testcases.RegisterUser.FactoryRegister"></class>
     </classes>
   </test>
 
   <test name="Test on Chrome" group-by-instances="true">
         <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="tiktzuki.selenium_grid.testcases.profile_modify.FactoryProfileModify"></class>
+      <class name="tiktzuki.selenium_grid.testcases.RegisterUser.FactoryRegister"></class>
     </classes>
   </test>
 </suite>

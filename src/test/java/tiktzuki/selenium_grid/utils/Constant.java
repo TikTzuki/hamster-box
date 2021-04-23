@@ -9,4 +9,7 @@ public class Constant {
 	public static final String File_TestData_PROFILE_MODIFY = "Profile_Modify.xlsx";
 	public static final String Default_Username = "tiktzuki";
 	public static final String Default_Password = "P@ssword1";
+	public static final String File_Login = "Login_User.xlsx";
+	public static final String File_Register="Register.xlsx";
+	public static final String File_Create="Create.xlsx";
 }
