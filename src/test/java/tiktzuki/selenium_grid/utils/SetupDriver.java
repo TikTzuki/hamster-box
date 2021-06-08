@@ -39,7 +39,7 @@ public class SetupDriver {
             this.driver = new RemoteWebDriver(new URL(node + "/wd/hub"), ieOption);
         }
 
-        this.driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        this.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         this.driver.manage().window().maximize();
         this.driver.get(baseUrl);
 

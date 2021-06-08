@@ -4,20 +4,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.log4testng.Logger;
 
 public class ExcelUtils {
 	public XSSFWorkbook workBook;
 	public XSSFSheet sheet;
 	public XSSFCell cell;
 	public XSSFRow row;
-	Logger Log = Logger.getLogger(getClass());
+	Logger Log = Logger.getLogger(getClass().getSimpleName());
 
 	//This method is to set the File path and to open the Excel file, Pass Excel Path and Sheetname as Arguments to this method
 	public ExcelUtils(String path, String sheetName) {
@@ -34,9 +34,9 @@ public class ExcelUtils {
 	//This method is to read the test data from the Excel cell, in this we are passing parameters as Row num and Col num
 
 	public Object getCellData(int RowNum, int ColNum){
+			Object CellData = null; 
 		try{
 			this.cell = this.sheet.getRow(RowNum).getCell(ColNum);
-			Object CellData = new Object(); 
 			if (cell!=null) {
 				switch (cell.getCellType()) {
 				case Cell.CELL_TYPE_BOOLEAN:
@@ -44,14 +44,15 @@ public class ExcelUtils {
 					break;
 				case Cell.CELL_TYPE_NUMERIC:
 					CellData = cell.getNumericCellValue();
+//					Log.info("\nnumber " + cell.getNumericCellValue());
 					break;
 				case Cell.CELL_TYPE_STRING:
 					CellData = cell.getStringCellValue();
+//					Log.info("\nString " + cell.getStringCellValue());
 					break;
 				case Cell.CELL_TYPE_BLANK:
 					break;
 				case Cell.CELL_TYPE_ERROR:
-					Log.info(cell.getErrorCellValue());
 					break;
 					// CELL_TYPE_FORMULA will never occur
 				case Cell.CELL_TYPE_FORMULA: 
@@ -60,7 +61,7 @@ public class ExcelUtils {
 			}
 			return CellData;
 		}catch (Exception e){
-			return "";
+			return null; 
 		}
 	}
 
